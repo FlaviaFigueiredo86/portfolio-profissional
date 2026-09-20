@@ -1,0 +1,1111 @@
+/* =========================
+   CONFIGURAÇÕES GERAIS
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}body {
+   border: none !important; 
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #0d0d0d;
+    color: white;
+    line-height: 1.6;
+}
+
+section {
+    min-height: 70vh;
+    padding: 100px 8%;
+}
+
+h2 {
+    font-size: 45px;
+    margin-bottom: 30px;
+    color: #f5a400;
+}
+
+
+/* =========================
+   MENU
+========================= */
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+
+    background: rgba(10, 10, 10, 0.95);
+    border-bottom: 1px solid #292929;
+}
+
+nav {
+    max-width: 1200px;
+    margin: auto;
+
+    padding: 20px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #f5a400;
+}
+
+nav ul {
+    display: flex;
+    gap: 25px;
+    list-style: none;
+}.menu-mobile {
+    display: block;
+    background: none;
+    border: none;
+    color: #f5a400;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+nav ul.menu-aberto {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 75px;
+    right: 20px;
+    width: 220px;
+    background: #111;
+    padding: 20px;
+    border-radius: 15px;
+    gap: 15px;
+    border: 1px solid #f5a400;
+    z-index: 2000;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 22px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #f5a400;
+}
+
+
+/* =========================
+   TELA INICIAL
+========================= */
+
+.inicio {
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: flex-start;
+padding-left: 80px;
+    gap: 30px;
+    align-items: center;
+
+    padding-top: 140px;
+
+    background:
+        radial-gradient(
+            circle at 70% 50%,
+            #4a3000,
+            #0d0d0d 50%
+        );
+}
+
+.texto-inicio {
+    max-width: 700px;
+    position: relative;
+    z-index: 5;
+    text-align: center;
+    margin-left: -20px;
+}
+
+
+.texto-inicio > p:first-child {
+    color: #f5a400 !important;
+    letter-spacing: 4px;
+    font-weight: 800;
+    margin-top: 50px;
+    margin-bottom: 25px;
+    font-size: 28px;
+    position: relative;
+    z-index: 20;
+    text-shadow: 0 0 8px rgba(245, 164, 0, 0.5);
+}
+    color: #f5a400;
+    letter-spacing: 4px;
+    font-weight: bold;
+    margin-bottom: 25px;
+    font-size: 28px;
+    position: relative;
+    z-index: 10;
+}
+
+.texto-inicio h1 {
+    font-size: 80px;
+    line-height: 1.05;
+    margin-bottom: 30px;
+}
+
+.texto-inicio h1 span {
+    display: block;
+    color: #f5a400;
+}
+
+.texto-inicio p {
+    color: #cccccc;
+    font-size: 22px;
+    margin-bottom: 30px;
+}
+
+/* =========================
+   BOTÃO
+========================= */
+
+.botao {
+    display: inline-block;
+
+    padding: 15px 30px;
+
+    background: #f5a400;
+
+    color: #111;
+
+    text-decoration: none;
+
+    border-radius: 30px;
+
+    font-weight: bold;
+
+    transition: 0.3s;
+}
+
+.botao:hover {
+    transform: translateY(-5px);
+
+    box-shadow:
+        0 10px 30px
+        rgba(245, 164, 0, 0.4);
+}
+
+
+/* =========================
+   COPO DE CHOPP
+========================= */
+
+.copo-container {
+    width: 300px;
+    height: 450px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: relative;
+}
+
+
+/* COPO */
+
+.copo {
+    width: 190px;
+    height: 320px;
+
+    position: relative;
+
+    overflow: hidden;
+
+    border: 4px solid rgba(255, 255, 255, 0.5);
+
+    border-top: none;
+
+    border-radius:
+        0 0 35px 35px;
+
+    box-shadow:
+        0 0 40px
+        rgba(245, 164, 0, 0.3);
+
+    transform:
+        perspective(500px)
+        rotateY(-10deg);
+}
+
+
+/* CHOPP */
+
+.cerveja {
+    position: absolute;
+
+    bottom: 0;
+    left: 0;
+
+    width: 100%;
+    height: 85%;
+
+    background:
+        linear-gradient(
+            to top,
+            #a85d00,
+            #e88c00,
+            #ffd66b
+        );
+
+    animation:
+        encherChopp 3s
+        ease-out;
+}
+
+
+/* ANIMAÇÃO DO CHOPP */
+
+@keyframes encherChopp {
+
+    from {
+        height: 0;
+    }
+
+    to {
+        height: 85%;
+    }
+
+}
+
+
+/* =========================
+   ESPUMA
+========================= */
+
+.espuma {
+    position: absolute;
+
+    top: 10px;
+    left: -5px;
+
+    width: 200px;
+    height: 80px;
+
+    z-index: 5;
+}
+
+.espuma span {
+
+    position: absolute;
+
+    width: 58px;
+    height: 58px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle at 30% 30%,
+            white,
+            #fff4d2
+        );
+
+    box-shadow:
+        0 3px 8px
+        rgba(0, 0, 0, 0.2);
+
+    animation:
+        espumaMexendo
+        2s infinite
+        ease-in-out;
+}
+
+
+/* POSIÇÃO DAS ESPUMAS */
+
+.espuma span:nth-child(1) {
+    left: 0;
+    top: 20px;
+}
+
+.espuma span:nth-child(2) {
+    left: 35px;
+    top: 0;
+}
+
+.espuma span:nth-child(3) {
+    left: 70px;
+    top: 18px;
+}
+
+.espuma span:nth-child(4) {
+    left: 110px;
+    top: 2px;
+}
+
+.espuma span:nth-child(5) {
+    left: 145px;
+    top: 20px;
+}
+
+
+/* ANIMAÇÃO DA ESPUMA */
+
+@keyframes espumaMexendo {
+
+    0%,
+    100% {
+        transform:
+            translateY(0)
+            scale(1);
+    }
+
+    50% {
+        transform:
+            translateY(-8px)
+            scale(1.06);
+    }
+
+}
+
+
+/* =========================
+   SOBRE
+========================= */
+
+#sobre {
+    background: #111;
+
+    text-align: center;
+}
+
+#sobre p {
+    max-width: 800px;
+
+    margin: 15px auto;
+
+    color: #bbbbbb;
+
+    font-size: 18px;
+}
+
+
+/* =========================
+   CHOPP
+========================= */
+
+#chopp {
+
+    background:
+        linear-gradient(
+            135deg,
+            #251800,
+            #0d0d0d
+        );
+
+    text-align: center;
+}
+
+#chopp h3 {
+
+    font-size: 36px;
+
+    margin-bottom: 20px;
+
+    color: white;
+}
+
+#chopp p {
+
+    max-width: 700px;
+
+    margin: 15px auto;
+
+    color: #cccccc;
+
+    font-size: 22px;
+}#chopp p:nth-of-type(2) {
+    font-size: 28px;
+}
+
+.whatsapp {
+    display: inline-block;
+
+    margin-top: 35px;
+
+    padding: 16px 32px;
+
+    border-radius: 30px;
+
+    background: #20c463;
+
+    color: white;
+
+    text-decoration: none;
+
+    font-weight: bold;
+
+    font-size: 17px;
+
+    transition: 0.3s;
+
+    box-shadow:
+        0 8px 20px
+        rgba(32, 196, 99, 0.20);
+}
+
+.whatsapp:hover {
+    transform: translateY(-5px);
+
+    box-shadow:
+        0 12px 30px
+        rgba(32, 196, 99, 0.35);
+}
+
+.whatsapp:hover {
+
+    transform:
+        scale(1.05);
+
+}
+
+
+/* =========================
+   PROJETOS
+========================= */
+
+#projetos {
+
+    background: #0d0d0d;
+
+    text-align: center;
+}
+
+.projetos {
+
+    max-width: 1100px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 20px;
+}
+
+.projetos article {
+    background: linear-gradient(
+        145deg,
+        #1c1c1c,
+        #111111
+    );
+
+    padding: 30px;
+
+    border-radius: 20px;
+
+    border: 1px solid #292929;
+
+    transition: 0.4s;
+
+    box-shadow:
+        0 10px 30px
+        rgba(0, 0, 0, 0.25);
+
+    position: relative;
+
+    overflow: hidden;
+}
+.projetos article:hover {
+
+    transform:
+        translateY(-10px);
+
+    border-color:
+        #f5a400;
+
+}
+
+.projetos h3 {
+
+    margin-bottom: 15px;
+
+    color: #f5a400;
+
+    font-size: 28px;
+}
+
+.projetos p {
+
+    color: #aaaaaa;
+
+    font-size: 20px;
+
+    line-height: 1.6;
+}
+
+
+/* =========================
+   CONTATO
+========================= */
+
+#contato {
+
+    text-align: center;
+
+    background: #111;
+}
+
+#contato p {
+
+    color: #bbbbbb;
+
+    font-size: 26px;
+}
+
+
+/* =========================
+   RODAPÉ
+========================= */
+
+footer {
+
+    padding: 30px;
+
+    text-align: center;
+
+    background: #050505;
+
+    color: #777;
+}
+
+
+/* =========================
+   CELULAR
+========================= */
+
+ @media (max-width: 800px) {
+
+    nav ul {
+        display: none;
+    }
+
+    .menu-mobile {
+        display: block;
+        background: none;
+        border: none;
+        color: #f5a400;
+        font-size: 30px;
+        cursor: pointer;
+    }
+
+    nav {
+        position: relative;
+    }
+
+    nav ul.menu-aberto {
+       nav ul.menu-aberto {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 70px;
+    right: 20px;
+    width: 220px;
+    padding: 20px;
+    background: #111;
+    border: 1px solid #f5a400;
+    border-radius: 15px;
+    gap: 15px;
+    z-index: 2000;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+    .inicio {
+        flex-direction: column;
+        text-align: center;
+        padding-top: 150px;
+    }
+rgb(196, 160, 160)
+    .texto-inicio h1 {
+        font-size: 48px;
+    }
+
+    .copo-container {
+        margin-top: 40px;
+    }
+
+    .projetos {
+        grid-template-columns: 1fr;
+    }
+
+    .chopp-info {
+        grid-template-columns: 1fr;
+    }
+
+  section {
+    padding: 80px 5%;
+    background: #0d0d0d;
+}
+}
+
+}.link-projeto {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 18px;
+
+    background: #f5a400;
+    color: #111;
+
+    text-decoration: none;
+    border-radius: 20px;
+
+    font-weight: bold;
+
+    transition: 0.3s;
+}
+
+.link-projeto:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 8px 20px
+        rgba(245, 164, 0, 0.35);
+}/* =========================
+   FORMAÇÃO E CERTIFICADOS
+========================= */
+
+#formacao {
+    background: #0d0d0d;
+    text-align: center;
+}
+
+.formacao-container {
+    max-width: 1100px;
+    margin: auto;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 25px;
+}
+
+.formacao-card {
+    background: #181818;
+
+    padding: 30px;
+
+    border-radius: 20px;
+
+    border: 1px solid #292929;
+
+    transition: 0.4s;
+}
+
+.formacao-card:hover {
+    transform: translateY(-8px);
+
+    border-color: #f5a400;
+}
+
+.formacao-card h3 {
+    color: #f5a400;
+
+    margin-bottom: 15px;
+
+    font-size: 28px;
+}
+
+.formacao-card p {
+    color: #aaaaaa;
+
+    line-height: 1.7;
+  font-size: 20px;
+}
+
+/* CELULAR */
+
+@media (max-width: 800px) {
+
+    .formacao-container {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+/* CURRÍCULO */
+
+ .curriculo {
+    display: inline-block;
+    margin-top: 30px;
+    padding: 15px 30px;
+    background: #f5a400 !important;
+    color: #111 !important;
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 1.5;
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
+.curriculo:hover {
+    background: #ffbd32 !important;
+}
+
+
+/* CERTIFICADOS */
+
+.certificado {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background: #f5a400;
+    color: #111;
+    text-decoration: none;
+    border-radius: 20px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.certificado:hover {
+    transform: translateY(-3px);
+    box-shadow:
+        0 8px 20px
+        rgba(245, 164, 0, 0.35);
+}
+
+
+/* ANIMAÇÃO DOS PROJETOS */
+
+.projetos article {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: aparecerProjeto 0.8s ease forwards;
+}
+
+.projetos article:nth-child(1) {
+    animation-delay: 0.2s;
+}
+
+.projetos article:nth-child(2) {
+    animation-delay: 0.4s;
+}
+
+.projetos article:nth-child(3) {
+    animation-delay: 0.6s;
+}
+
+@keyframes aparecerProjeto {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* CHOPP */
+
+.chopp-info {
+    max-width: 1100px;
+    margin: 40px auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.chopp-card {
+    background: #181818;
+    padding: 30px 20px;
+    border-radius: 20px;
+    border: 1px solid #292929;
+    transition: 0.4s;
+}
+
+.chopp-card span {
+    font-size: 40px;
+}
+
+.chopp-card h4 {
+    color: #f5a400;
+    font-size: 20px;
+    margin: 15px 0;
+}
+
+.chopp-card p {
+    color: #aaaaaa;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.chopp-card:hover {
+    transform: translateY(-8px);
+    border-color: #f5a400;
+    box-shadow:
+        0 10px 30px
+        rgba(245, 164, 0, 0.15);
+}
+
+
+/* SOBRE */
+
+.sobre-conteudo {
+    max-width: 900px;
+    margin: auto;
+}
+
+.sobre-texto {
+    text-align: left;
+}
+
+#sobre p {
+    max-width: 900px;
+    margin: 18px auto;
+    color: #bbbbbb;
+    font-size: 18px;
+    line-height: 1.8;
+}
+
+.especialidades {
+    margin-top: 30px !important;
+    padding: 20px;
+    background: #181818;
+    border-left: 4px solid #f5a400;
+    border-radius: 10px;
+}
+
+.especialidades strong {
+    color: #f5a400;
+    font-size: 26px;
+    font-weight: bold;
+}
+.especialidades {
+    font-size: 20px;
+}
+
+/* CURRÍCULO */
+
+.curriculo {
+    display: inline-block;
+    margin-top: 30px;
+    padding: 15px 30px;
+    background: #f5a400 !important;
+    color: #111 !important;
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 1.5;
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
+.curriculo:hover {
+    transform: translateY(-5px);
+    background: #ffbd32 !important;
+    box-shadow: 0 12px 30px rgba(245, 164, 0, 0.40);
+}
+
+/* FOTO DE PERFIL */
+
+.foto-perfil {
+    width: 250px !important;
+    height: 250px !important;
+    flex-shrink: 0;
+}
+
+.foto-perfil img {
+    width: 250px !important;
+    height: 250px !important;
+    max-width: 250px !important;
+    max-height: 250px !important;
+    object-fit: cover;
+    border-radius: 50%;
+    display: block;
+    }
+.logo img {
+    width: 140px;
+    height: auto;
+    display: block;
+}
+
+Depois:
+* ============================== SEÇÃO CHOPP - PROFISSIONAL ============================== */ #chopp { text-align: center; background: radial-gradient( circle at center, #241800, #0d0d0d 65% ); } #chopp h2 { margin-bottom: 15px; } #chopp h3 { font-size: 28px; color: white; margin-bottom: 25px; } #chopp > p { max-width: 850px; margin: 0 auto 18px; font-size: 18px; color: #ddd; } #chopp .chopp-destaque { font-size: 29px; color: #f5a400; font-weight: bold; } .frase-chopp { margin-top: 30px !important; font-size: 25px !important; color: white !important; } /* CARDS */ .chopp-info { max-width: 1100px; margin: 50px auto; display: grid; grid-template-columns: repeat(4, 1fr); gap: 22px; } .chopp-card { background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(245, 164, 0, 0.35); border-radius: 18px; padding: 30px 20px; transition: 0.3s; } .chopp-card:hover { transform: translateY(-8px); border-color: #f5a400; box-shadow: 0 10px 30px rgba(245, 164, 0, 0.18); } .chopp-card span { display: block; font-size: 45px; margin-bottom: 15px; } .chopp-card h4 { font-size: 21px; color: #f5a400; margin-bottom: 12px; } .chopp-card p { font-size: 16px; color: #ddd; line-height: 1.6; } /* CHAMADA PARA AÇÃO */ .chopp-cta { max-width: 750px; margin: 30px 0 0 -20px; padding: 35px; border: 1px solid #f5a400; border-radius: 20px; background: rgba(245, 164, 0, 0.06); } .chopp-cta h3 { color: #f5a400; font-size: 30px; margin-bottom: 10px; } .chopp-cta p { color: #ddd; font-size: 18px; margin-bottom: 25px; } /* CELULAR */ @media (max-width: 800px) { .chopp-info { grid-template-columns: 1fr; } #chopp h3 { font-size: 23px; } #chopp > p { font-size: 16px; } .chopp-cta { padding: 25px 18px; } }/* LOGO IMIGRAÇÃO NA SEÇÃO CHOPP */
+
+.logo-imigracao {
+    width: 160px !important;
+    height: auto !important;
+    max-width: 160px !important;
+    display: block !important;
+    margin: 0 auto 25px !important;
+}/* Fundo padrão de todas as páginas/seções */
+section {
+    background: #0d0d0d;
+}
+
+/* Mantém o fundo especial da primeira seção */
+.inicio {
+    background:
+        radial-gradient(
+            circle at 70% 50%,
+            #4a3000,
+            #0d0d0d 50%
+        );
+}
+
+/* Fundo da seção Chopp */
+
+#chopp {
+    background:
+        radial-gradient(
+            circle at center,
+            #4a3000,
+            #0d0d0d 65%
+        );
+}
+#sobre,
+#projetos,
+#formacao,
+#contato {
+    background:
+        radial-gradient(
+            circle at center,
+            #241800,
+            #0d0d0d 70%
+        );
+}
+ /* Dois copos de chopp */
+
+.copos-brinde {
+    width: 600px;
+    max-width: none;
+    display: flex;
+    justify-content: center;
+}
+
+.copos-brinde img {
+    width: 600px;
+    max-width: none;
+    height: auto;
+    display: block;
+}/* =========================
+   COPO DE CHOPP ANIMADO
+========================= */
+
+/* COPO DE CHOPP ANIMADO */
+.inicio {
+    position: relative;
+}
+.copo-animado {
+    position: absolute;
+    left: 95%;
+    top: 15%;
+    transform: translate(-50%, -50%);
+    animation: levantarCopo 3s ease-in-out infinite;
+}
+
+.copo-animado img {
+    width: 250px;
+    height: auto;
+    display: block;
+}
+
+/* Movimento do copo */
+@keyframes levantarCopo {
+    0% {
+        transform: translateY(0) rotate(0deg);
+    }
+
+    25% {
+        transform: translateY(-15px) rotate(-4deg);
+    }
+
+    50% {
+        transform: translateY(0) rotate(0deg);
+    }
+
+    75% {
+        transform: translateY(-15px) rotate(4deg);
+    }
+
+    100% {
+        transform: translateY(0) rotate(0deg);
+    }
+}#chopp {
+    font-size: 30px;
+#chopp h3 {
+    font-size: 30px;
+    margin-bottom: 20px;
+    color: #f5a400;
+}
+
+#chopp .chamada-chopp {
+    font-size: 26px;
+}#chopp h3 {
+    color: #f5a400 !important;
+    font-size: 30px;
+    margin-bottom: 20px;
+}.chopp-cta h3 {
+    color: #f5a400 !important;
+    font-size: 30px !important;
+}.chopp-cta h3 {
+    color: #f5a400 !important;
+    font-size: 30px !important;
+}
+
+.chopp-cta .chamada-chopp {
+    font-size: 26px !important;
+}#projetos article h3 {
+    font-size: 28px;
+    margin-bottom: 18px;
+}
+
+#projetos article p {
+    font-size: 20px;
+    line-height: 1.6;
+}#projetos article h3 {
+    font-size: 28px !important;
+    margin-bottom: 18px !important;
+}
+
+#projetos article p {
+    font-size: 20px !important;
+    line-height: 1.6 !important;
+}.formacao-card h3 {
+    font-size: 28px;
+    margin-bottom: 18px;
+}
+
+.formacao-card p {
+    font-size: 20px;
+    line-height: 1.6;
+}#contato p {
+    font-size: 24px;
+    line-height: 1.6;
+}#chopp .chopp-destaque + p {
+    font-size: 22px;
+    line-height: 1.6;
+}#chopp .chopp-destaque + p {
+    font-size: 24px !important;
+    line-height: 1.6 !important;
+#chopp .chopp-destaque + p {
+    font-size: 24px !important;
+    line-height: 1.6;
+}#chopp > p:nth-of-type(2) {
+    font-size: 26px !important;
+    line-height: 1.6 !important;
+}
